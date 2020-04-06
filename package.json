@@ -1,0 +1,32 @@
+{
+  "name": "challenge-javascript-11",
+  "version": "1.0.0",
+  "description": "Zero and one parents problem",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PlatziMaster/challenge-javascript-11.git"
+  },
+  "keywords": [
+    "JavaScript"
+  ],
+  "author": "Hector Olvera Vital <hector.olvera@ciencias.unam.mx>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PlatziMaster/challenge-javascript-11/issues"
+  },
+  "homepage": "https://github.com/PlatziMaster/challenge-javascript-11#readme",
+  "devDependencies": {
+    "husky": "^4.2.3",
+    "jest": "^25.2.7"
+  },
+  "jest": {
+    "verbose": true,
+    "transformIgnorePatterns": [
+      "<rootDir>/(node_modules)/"
+    ]
+  }
+}

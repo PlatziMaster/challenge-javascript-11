@@ -1,6 +1,6 @@
 # challenge-javascript-11 - Zero and one parents problem
 
-Suppose we have some input data describing a graph of relationships between parents and children over multiple generations. The data is formatted as a list of (parent, child) pairs, where each individual is assigned a unique integer identifier.
+Suppose we have some input data describing a graph of relationships between parents and children over multiple generations. The data is formatted as a list of [parent, child] pairs, where each individual is assigned a unique integer identifier.
 
 ### Example
 

@@ -20,24 +20,35 @@ const findNodesWithZeroAndOneParents = (parentChildPairs) => {
   
   console.log(`array before:\n parents = ${parents}\nchildren = ${children}\n\n`);
 
-  // children.map(j => {
-  //   if(parents.includes(j)){
-  //     console.log(parents);
+  children.map(j => {
+    if(parents.includes(j)){
+      console.log(parents);
       
-  //     console.log(`${j} makes match`);
+      console.log(`${j} makes match`);
       
-  //     const indexToRemove = parents.findIndex((element)=> element === j)
-  //     console.log(`index of the element to remove ${indexToRemove}`);      
-  //     const elementsRemoved = parents.splice(indexToRemove, indexToRemove -1);
-  //     console.log(`elementsRemoved = ${elementsRemoved}`);
-  //     console.log(`current parents ${parents}`);
-  //   }
-  // })
+      const indexToRemove = parents.findIndex((element)=> element === j)
+      console.log(`index of the element to remove ${indexToRemove}`);      
+      const elementsRemoved = parents.splice(indexToRemove, indexToRemove -1);
+      console.log(`elementsRemoved = ${elementsRemoved}`);
+      console.log(`current parents ${parents}`);
+    }
+  })
 
+  const oneParent = [];
+  for (i in children) {
+    for (j in children) {
+      if (children[i] == children[j] && i != j) break;
+      else if (j == children.length - 1){
+        oneParent.push(children[i])
+      } 
+    }
+  }
 
+  oneParent.sort((a,b)=>{
+    return a-b;
+  });
   
-  
-  console.log(`array after: zeroparents = ${parents}\nchildren = ${children}`);
+  console.log(`array after: zeroparents = ${parents}\nOneParent = ${oneParent}`);
 }
 
 findNodesWithZeroAndOneParents(parentChild);

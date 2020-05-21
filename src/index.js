@@ -25,8 +25,7 @@ const findNodesWithZeroAndOneParents = (parentChildPairs) => {
     
   })
 
-  let zeroParents = []
-  let oneParents = []
+  let [ zeroParents, oneParents ] = [ [], [] ]
   result.forEach((member) => {
     if (member.asChild === 0) zeroParents.push(member.member)
     if (member.asChild === 1) oneParents.push(member.member)

@@ -14,17 +14,17 @@ const findNodesWithZeroAndOneParents = (parentChildPairs) => {
     children.push(parentChildPairs[i][1]);
   }
 
-  let numberChild = children.reduce((countChild, child) => {
-    countChild[child] = (countChild[child] || 0) + 1;
-    return countChild;
-  }, {});
+  let numberChild = children
+    .sort((a, b) => a - b)
+    .reduce((countChild, child) => {
+      countChild[child] = (countChild[child] || 0) + 1;
+      return countChild;
+    }, {});
 
-  parents = parents.filter((item) => !children.includes(item));
-  children = children
-    .filter((item) => numberChild[item] === 1)
-    .sort((a, b) => a - b);
+  let zeroParents = parents.filter((item) => !children.includes(item));
+  let oneParents = children.filter((item) => numberChild[item] === 1);
 
-  return [parents, children];
+  return [zeroParents, oneParents];
 };
 
 module.exports = findNodesWithZeroAndOneParents;

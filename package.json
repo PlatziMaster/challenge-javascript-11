@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/PlatziMaster/challenge-javascript-11#readme",
   "devDependencies": {
-    "husky": "^4.2.3",
-    "jest": "^25.2.7"
+    "husky": "4.2.3",
+    "jest": "25.2.7"
   },
   "jest": {
     "verbose": true,

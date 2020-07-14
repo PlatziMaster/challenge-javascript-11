@@ -13,10 +13,12 @@ describe('ZeroAndOneParents', () => {
   })
 
   it('Should returns two collections ', () => {
-    expect(findNodesWithZeroAndOneParents([
+    const result = findNodesWithZeroAndOneParents([
       [1, 3], [2, 3], [3, 6], [5, 6], [5, 7],
       [4, 5], [4, 8], [4, 9], [9, 11]
-    ])).toEqual([
+    ])
+    console.log("RESUlT", result)
+    expect(result).toEqual([
       [1, 2, 4],
       [5, 7, 8, 9, 11]
     ]);

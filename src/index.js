@@ -4,8 +4,8 @@
  * @returns {number[][]}
  */
 const findNodesWithZeroAndOneParents = (parentChildPairs) => {
-    const flatItems = parentChildPairs.flat();
-    const uniqueItems = flatItems.filter((item, index) => flatItems.indexOf(item) == index)
+    let uniqueItems = parentChildPairs.flat();
+    uniqueItems = uniqueItems.filter((item, index) => uniqueItems.indexOf(item) == index)
     const parentsCount = new Array(uniqueItems.length).fill(0);
     parentChildPairs.map(pairs =>{
         parentsCount[uniqueItems.indexOf(pairs[1])]++;

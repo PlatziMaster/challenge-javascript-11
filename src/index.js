@@ -14,33 +14,39 @@ const findNodesWithZeroAndOneParents = (parentChildPairs) => {
         }
         lastNumber = parentChildPairs[i][0];
     }
-    possibleParents.map(number =>{
-        let counter = 0;
-        for(let i = 0; i< parentChildPairs.length; i++){
-            if(number == parentChildPairs[i][1]){
-                counter = 1;
-            }
-        }
-        if(counter == 0){
-            parents.push(number);
-        }
-    })
-    for(let i = 0; i <parentChildPairs.length; i++){
-        let child = parentChildPairs[i][1];
-        let counter = 0;
-        for(let j = 0; j < parentChildPairs.length; j++){
-            if(child == parentChildPairs[j][1]){
-                counter ++;  
-            }
-        }
-        if(counter == 1){
-            childsWithOneParent.push(child);
-        }
+    for (let i = 0; i < possibleParents.length; i++){
+        let number = possibleParents[i]
+        nodeComparision({
+            number: number,
+            equal: 0,
+            arrayPush: parents,
+            array: parentChildPairs
+        })
     }
+    for(let i = 0; i <parentChildPairs.length; i++){
+        let number = parentChildPairs[i][1];
+        nodeComparision({
+            number: number,
+            equal: 1,
+            arrayPush: childsWithOneParent,
+            array: parentChildPairs
+        })
+    }
+    //sort the array in order ASC
     childsWithOneParent = childsWithOneParent.sort( (a,b) => {
         return a - b;
     });
-    return [parents, childsWithOneParent];                
+    return [parents, childsWithOneParent];
 }
-
+function nodeComparision({number: number, equal: equal, arrayPush: arrayPush, array: array}){
+    let counter = 0;
+    for(let j = 0; j< array.length; j++){
+        if(number == array[j][1]){
+            counter++;
+        }
+    }
+    if(counter == equal){
+        arrayPush.push(number);
+    }
+}
 module.exports = findNodesWithZeroAndOneParents;
